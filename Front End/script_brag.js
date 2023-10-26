@@ -1,4 +1,4 @@
-import {createPost} from '../Back_End/scrpit/entry.js/'
+import { createBragPost } from '../Back_End/scripts/entry.js'
 
 //creating variable to select the buttons
 const backButton = document.getElementsByClassName("back-button")[0];
@@ -18,10 +18,36 @@ backButton.addEventListener("click", changeToHomePage);
 // declare vairable
 // import create post
 
-const messageInput= document.getElementsByName("Message");
-const BoxMessage= messageInput.values;
-const saveButton= document.getElementsByClassName("footerSaveItButton");
+const messageInput= document.getElementById("Message");
+const saveButton= document.getElementById("footerSaveItButton");
 
-function saveToDb () {
- 
-}
+saveButton.addEventListener('click', async () => {
+  // Get message from input field
+  const message = messageInput.value;
+
+  //Check message is empty
+  if (message.trim() == '') {
+    alert('Please enter a message before saving.');
+  } else {
+    // Call createBragPost function to save the message to the database
+    try {
+      const journal = { post: message };
+      const createdBrag = await createBragPost(journal);
+
+      // Display success message or handle as needed
+      console.log('Brag entry added successfully:', createdBrag);
+    } catch (error) {
+      // Handle any errors that occur during database insertion
+      console.error('Error adding brag entry:', error);
+    }
+  }
+  // // create data object to send as JSON 
+  //   const data = {message};
+
+  // // Send a POST request to your server
+  // createBragPost(message);
+  // clear input field
+  messageInput.value = '';
+  }
+
+)
