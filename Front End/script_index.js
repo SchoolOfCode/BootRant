@@ -13,7 +13,7 @@ function changeToJournal() {
 }
 function changeToAddBrag() {
   // Use window.location to navigate to the desired page
-  window.location.href = "./brag.html";
+  window.location.href = "./brag-input.html";
 }
 function changeToAddRant() {
   // Use window.location to navigate to the desired page
