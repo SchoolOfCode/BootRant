@@ -74,6 +74,8 @@ async function popDom() {
 function createRantCard(postString, postDate) {
   console.log(`post string is ${postString}`);
   console.log(`post date is ${postDate}`);
+  // trim postDate to just the date chars
+  const postDateTrim = postDate.slice(0, 10)
   // append text-icon into card (contains skull icon and the date)
   // Make card
   const card = document.createElement("div");
@@ -100,6 +102,7 @@ function createRantCard(postString, postDate) {
   // p element with e class of date.
   const date = document.createElement("p");
   date.classList.add("date");
+  date.innerHTML = postDateTrim;
   // append card-date into card (contains the calendar icon and the date)
   // card date needs the following children
   // append calendar icon
