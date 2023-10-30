@@ -3,7 +3,7 @@ import express from "express";
 import morgan from "morgan";
 
 //importing the requests
-import { getDate, createPost } from "./Back_End/scripts/entry.js";
+import { getJournalEntries, createPost } from "./Back_End/scripts/entry.js";
 
 // Initialize the express app
 const app = express();
@@ -15,8 +15,8 @@ app.use(morgan("dev")); // Morgan is used for logging HTTP requests to the conso
 app.use(express.json()); // express.json() middleware is used to parse incoming JSON requests
 app.use(express.static("Front End"));
 app.get("/journal/", async function (req, res) {
-  const entry = await getDate();
-  console.log("Did I get the date?")
+  const entry = await getJournalEntries();
+  console.log("Did I get the date?");
   res.status(200).json({ status: "success", data: entry });
 });
 

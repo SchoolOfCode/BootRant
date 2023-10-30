@@ -5,7 +5,7 @@ const backButton = document.getElementsByClassName("back-button")[0];
 function changeToHomePage() {
   // Use window.location to navigate to the desired page
   window.location.href = "./index.html";
-};
+}
 function changeToJournal() {
   // Use window.location to navigate to the desired page
   window.location.href = "./journal.html";
@@ -21,7 +21,6 @@ const messageInput = document.getElementById("Message");
 const saveButton = document.getElementById("footerSaveItButton");
 
 saveButton.addEventListener("mousedown", async () => {
-
   console.log("clicked");
   // Get message from input field
   const message = messageInput.value;

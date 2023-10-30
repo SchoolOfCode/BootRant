@@ -17,9 +17,7 @@ function changeToAddBrag() {
 function changeToAddRant() {
   // Use window.location to navigate to the desired page
   window.location.href = "./rant-input.html";
-
-};
-
+}
 
 // Event listeners
 bragButton.addEventListener("click", changeToAddBrag);
