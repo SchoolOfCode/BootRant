@@ -3,7 +3,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon -r dotenv/config app.js",
+    "dev": "nodemon -r dotenv/config server.js",
     "rd": "nodemon -r dotenv/config Back_End/scripts/reset-database.js"
   },
   "dependencies": {
