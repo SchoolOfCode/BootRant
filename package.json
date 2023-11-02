@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon -r dotenv/config server.js",
-    "rd": "nodemon -r dotenv/config Back_End/scripts/reset-database.js"
+    "rd": "nodemon -r dotenv/config Back_End/scripts/reset-database.js",
+    "deploy": "node -r dotenv/config server.js"
   },
   "dependencies": {
     "express": "^4.18.2",
